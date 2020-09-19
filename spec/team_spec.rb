@@ -12,4 +12,12 @@ RSpec.describe Team do
     expect(@team.players).to eql([])
     expect(@team.eliminated).to eql(false)
   end
+
+  it "can set eliminated atteribute" do
+    expect(@team.eliminated).to eql(false)
+
+    @team.eliminated = true
+
+    expect(@team.eliminated).to eql(true)
+  end
 end
