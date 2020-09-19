@@ -8,6 +8,10 @@ class Team
     @players = []
   end
 
+  def eliminated?
+    @eliminated
+  end
+
   def add_player(player)
     @players << player
   end
@@ -16,5 +20,9 @@ class Team
     @players.find_all do |player|
       player.position == position
     end
+  end
+
+  def all_positions
+    @players.map { |player| player.position }.uniq
   end
 end
