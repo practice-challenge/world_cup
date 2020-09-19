@@ -14,11 +14,11 @@ RSpec.describe Team do
   end
 
   it "can set eliminated atteribute" do
-    expect(@team.eliminated).to eql(false)
+    expect(@team.eliminated?).to eql(false)
 
     @team.eliminated = true
 
-    expect(@team.eliminated).to eql(true)
+    expect(@team.eliminated?).to eql(true)
   end
 
   it "can add a player to players" do
