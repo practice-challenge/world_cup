@@ -18,4 +18,9 @@ RSpec.describe WorldCup do
   it "exists" do
     expect(@world_cup).to be_an_instance_of(WorldCup)
   end
+
+  it "has readable attributes" do
+    expect(@world_cup.year).to eql(2018)
+    expect(@world_cup.teams).to eql([@france, @croatia])
+  end
 end

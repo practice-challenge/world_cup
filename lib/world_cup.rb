@@ -1,5 +1,8 @@
 class WorldCup
-  def initialize(year, teams)
+  attr_reader :year, :teams
 
+  def initialize(year, teams)
+    @year = year
+    @teams = teams
   end
 end
