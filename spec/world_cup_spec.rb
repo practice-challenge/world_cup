@@ -31,4 +31,18 @@ RSpec.describe WorldCup do
 
     expect(@world_cup.active_players_by_position("midfielder")).to contain_exactly(@pogba)
   end
+
+  it "can find all positions played in the world cup" do
+    expect(@world_cup.all_positions).to contain_exactly('forward', 'defender', 'midfielder')
+  end
+
+  it "can return a hash grouping all players by positions" do
+    expect(@world_cup.all_players_by_position).to eql(
+      {
+        "forward" => [@mbappe],
+        "midfielder" => [@pogba, @modric],
+        "defender" => [@vida]
+      }
+    )
+  end
 end

@@ -47,4 +47,15 @@ RSpec.describe Team do
     expect(@team.players_by_position('defender')).to contain_exactly(tinglum)
     expect(@team.players_by_position('goally')).to eql([])
   end
+
+  it "can return array of all positions played on the team" do
+    mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
+    pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
+    camp = Player.new({name: "Ryan Camp", position: "forward"})
+    @team.add_player(mbappe)
+    @team.add_player(pogba)
+    @team.add_player(camp)
+
+    expect(@team.all_positions).to contain_exactly('forward', 'midfielder')
+  end
 end

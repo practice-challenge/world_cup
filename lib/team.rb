@@ -21,4 +21,8 @@ class Team
       player.position == position
     end
   end
+
+  def all_positions
+    @players.map { |player| player.position }.uniq
+  end
 end
