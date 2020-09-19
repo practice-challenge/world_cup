@@ -6,4 +6,10 @@ RSpec.describe Team do
   it "exists" do
     expect(@team).to be_an_instance_of(Team)
   end
+
+  it "has readable attributes" do
+    expect(@team.country).to eql('France')
+    expect(@team.players).to eql([])
+    expect(@team.eliminated).to eql(false)
+  end
 end

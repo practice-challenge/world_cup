@@ -1,5 +1,8 @@
 class Team
-  def initialize(team_name)
-
+  attr_reader :country, :players, :eliminated
+  def initialize(country)
+    @country = country
+    @eliminated = false
+    @players = []
   end
 end
