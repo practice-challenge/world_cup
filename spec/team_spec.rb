@@ -20,4 +20,16 @@ RSpec.describe Team do
 
     expect(@team.eliminated).to eql(true)
   end
+
+  it "can add a player to players" do
+    mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
+    pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
+
+    expect(@team.players).to eql([])
+
+    @team.add_player(mbappe)
+    @team.add_player(pogba)
+
+    expect(@team.players).to eql([mbappe, pogba])
+  end
 end
